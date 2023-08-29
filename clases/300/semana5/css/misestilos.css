@@ -1,0 +1,15 @@
+#fila1,#fila2{
+    height: 50vh;
+}
+
+#fila1{
+    background-color: antiquewhite;
+}
+
+#fila2{
+    background-color: aquamarine;
+}
+
+#col2{
+    background-color: blueviolet;
+}
