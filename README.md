@@ -8,5 +8,3 @@ Esta es la pagina de inicio de nuestro repositorio. Está escrita en un lenguaje
 
 * [Introducción a HTML](https://developer.mozilla.org/es/docs/Web/HTML)
 * [Comandos git](https://github.com/gdcodev/comandos-git)
-
-###Test
