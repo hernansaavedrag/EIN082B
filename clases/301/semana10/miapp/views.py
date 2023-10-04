@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Carrera
 
 # Create your views here.
 
@@ -14,10 +15,14 @@ def index(request):
 
 def carreras(request):
     title = "Carreras"
-    total_carreras = 3
+
+    total_carreras = Carrera.objects.count()
+    carreras = Carrera.objects.all()
+
     data = {
         "title": title,
-        "total_carreras":total_carreras
+        "total_carreras":total_carreras,
+        "carreras":carreras
     }
     return render(request,'miapp/carreras.html',data)
 
