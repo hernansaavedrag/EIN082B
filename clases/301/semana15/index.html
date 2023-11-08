@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apis de Terceros</title>
+</head>
+<body>
+    <h1>Ejemplo de Uso de API de Terceros</h1>
+
+    Estacion <span id="estacion">Viña</span><br>
+    Temperatura Actual <span id="temperatura">1</span>°
+
+    <!-- ES HTML-->
+    <script>
+        //Es Javascript
+        var url = "https://api.gael.cloud/general/public/clima/SCVM"
+        var api = new XMLHttpRequest()
+        api.open("GET",url, true)
+        api.send(null)
+
+        var spanEstacion = document.getElementById("estacion")
+        var spanTemperatura = document.getElementById("temperatura")
+
+        api.onreadystatechange = function () {
+            if(this.status == 200 && this.readyState == 4){
+                console.log(api.response)
+                var data = JSON.parse(api.response)
+                console.log(data.Estacion)
+                console.log("Temperatura actual: " + data.Temp + "°")
+
+                //AL HTML
+                spanEstacion.innerHTML = data.Estacion
+                spanTemperatura.innerHTML = data.Temp
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
