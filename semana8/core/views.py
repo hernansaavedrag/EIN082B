@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Carrera
 
 def home(request):
     #return HttpResponse("Hola Mundo")
@@ -8,11 +9,13 @@ def home(request):
 def carreras(request):
     titulo = "Carreras"
 
-    lista_carreras = [
-        "Técnico Universitario en Informática",
-        "Ingeniería en Informática",
-        "Ingeniería de Ejecución en Software",  
-    ]
+    # lista_carreras = [
+    #     "Técnico Universitario en Informática",
+    #     "Ingeniería en Informática",
+    #     "Ingeniería de Ejecución en Software",  
+    # ]
+
+    lista_carreras = Carrera.objects.all()
 
     data = {
         "titulo":titulo,

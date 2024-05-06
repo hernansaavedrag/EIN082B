@@ -1,11 +1,23 @@
 {% extends 'core/base.html' %} {%block content %}
 <h2>{{ titulo }}</h2>
 
-<ul>
-  {% for carrera in lista_carreras %}
-      <li>{{ carrera }}</li>
-  {%endfor %}
-
-</ul>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>Código</td>
+      <td>Nombre</td>
+      <td>Semestres</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for carrera in lista_carreras %}
+      <tr>
+        <td>{{ carrera.codigo_carrera }}</td>
+        <td>{{ carrera.nombre }}</td>
+        <td>{{ carrera.duracion }}</td>
+      </tr>
+    {%endfor %}
+  </tbody>
+</table>
 
 {% endblock %}
